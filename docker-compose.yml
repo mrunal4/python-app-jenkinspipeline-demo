@@ -1,0 +1,21 @@
+version: '3.3'
+services:
+  jenkins:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    image: 'python-hello-world'
+    labels:
+      kompose.service.type: nodeport
+    ports:
+      - '8080:8080'
+#     volumes:
+#       - type: bind
+#         source: ./jenkins_home
+#         target: /var/jenkins_home
+#       - type: bind
+#         source: ./jenkins_config
+#         target: /jenkins_config
+# volumes:
+#   jenkins_home:
+#   jenkins_config:
